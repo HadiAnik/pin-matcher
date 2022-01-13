@@ -14,8 +14,8 @@ function parentDigit() {
     if (isNaN(digit)) {
         // Handel backspace
         if (digit === '<') {
-            // const digitInput = document.getElementById('display-pin');
-            // digitInput.value = ;
+            var value = document.getElementById('display-pin').value;
+            document.getElementById('display-pin').value = value.substr(0, value.length - 1);
         }
         // Handel clear button
         if (digit === 'C') {
@@ -32,7 +32,6 @@ function parentDigit() {
 function verifyPin() {
     const generatePin = document.getElementById('generate-pin-display').value;
     const inputPin = document.getElementById('display-pin').value;
-
     if (generatePin === inputPin) {
         correctMsg('success', 'wrong');
     }
